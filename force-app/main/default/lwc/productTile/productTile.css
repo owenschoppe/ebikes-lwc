@@ -18,3 +18,11 @@ img.product {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+:host {
+    --price-color: blue;
+}
+
+[part~="price"] {
+    color: var(--price-color, black);
+}

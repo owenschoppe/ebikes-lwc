@@ -86,4 +86,108 @@ export default class ProductCard extends NavigationMixin(LightningElement) {
             }
         });
     }
+
+    value = 'inProgress';
+
+    get options() {
+        return [
+            { label: 'New', value: 'new' },
+            { label: 'In Progress', value: 'inProgress' },
+            { label: 'Finished lkjahdfk sadlkjfh ksaldjhf klsadhf kljsdh fkljshad fkljhsd kfljhasd lkfjh sdkljfh sdlkjfh d', value: 'finished' },
+        ];
+    }
+
+    get richtext() {
+        return `<span style="font-size: 12px;">
+                            For severance payments or adjustments to final pay, bonuses, or commissions that were only
+                            able to be calculated after termination of employment, while the service agreement is in
+                            effect can be processed for an active client.
+                            <br><br>
+                            To add a terminated worksite employee to the on-cycle payroll up to 6 months post
+                            termination effective date, please follow the navigation instructions below:
+                            <br><br><u><b>Path:</b></u><br>
+                            Admin/ Manager View Icon &gt;
+                            Payroll &gt; Enter Payroll
+                        </span>
+                        
+                        <ol>
+                            <li>
+                                <span style="font-size: 12px;">
+                                    <span style="font-family: Verdana,Geneva,sans-serif;">
+                                        This will display the Payroll Dashboard with a calendar and underneath that
+                                        calendar, it will show previously completed on-cycle payrolls (grey boxes and
+                                        displayed as “Completed”) and the current on-cycle payroll (blue box displayed
+                                        as “New or “Continue”).
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <span style="font-size: 12px;">
+                                    <span style="font-family: Verdana,Geneva,sans-serif;">
+                                        Select the blue box for the pay group that you want to enter payroll for which
+                                        will take you to the Process Payroll screen that will display all your active
+                                        worksite employees included on this payroll.
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <span style="font-size: 12px;">
+                                    <span style="font-family: Verdana,Geneva,sans-serif;">
+                                        Click on the blue “
+                                        <b>Add/Remove Terminated Employees</b>
+                                        ” link located on the bottom left corner of the screen.
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <span style="font-size: 12px;">
+                                    <span
+                                        style="font-family: Verdana,Geneva,sans-serif;">
+                                        Select the terminated employee
+                                        that you want to add to this payroll
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <span style="font-size: 12px;">
+                                    <span
+                                        style="font-family: Verdana,Geneva,sans-serif;">
+                                        Click on the orange “Submit”
+                                        button
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <span style="font-size: 12px;">
+                                    <span
+                                        style="font-family: Verdana,Geneva,sans-serif;">Terminated Employee will now
+                                        appear alphabetically on the list of employees included on this payroll, but you
+                                        will only be allowed to enter earnings codes and amounts in the Other Earnings
+                                        column for terminated employees.
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <span style="font-size: 12px;">
+                                    <span
+                                        style="font-family: Verdana,Geneva,sans-serif;">Save the payroll when you are
+                                        done making edits
+                                    </span>
+                                </span>
+                            </li>
+                        </ol> <br>
+                        <span style="font-size: 12px;">
+                            <span
+                                style="font-family: Verdana,Geneva,sans-serif;">
+                                If the payment to a terminated worksite
+                                employee is initiated beginning in the seventh (7) month post termination effective
+                                date, a Defense Indemnity Agreement (DIA) may be required. To obtain additional next
+                                steps, please contact us via email.
+                            </span>
+                            </span>`;
+    }
+
+    handleChange(event) {
+        this.value = event.detail.value;
+    }
 }

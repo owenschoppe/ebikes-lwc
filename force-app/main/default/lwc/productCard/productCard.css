@@ -1,3 +1,5 @@
+/* @import url("@salesforce/resourceUrl/bike_assets/common.css") */
+
 img.product {
     width: 100%;
     margin-bottom: 0.5rem;
@@ -8,4 +10,10 @@ section {
     font-size: 0.85rem;
     margin-top: 0.75rem;
     text-transform: uppercase;
+}
+
+:host {
+/*Breaks if slds updates which tokens are used in the blueprints.*/
+--lwc-cardColorBackground: var(--c-myBackgroundColor);
+--lwc-cardColorBorder: var(--shared-color);
 }

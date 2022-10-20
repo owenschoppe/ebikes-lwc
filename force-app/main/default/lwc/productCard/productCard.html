@@ -31,53 +31,239 @@
                         field-name={msrpField}
                     ></lightning-output-field>
 
-                    <section>Electric Components</section>
-                    <lightning-output-field
-                        field-name={batteryField}
-                    ></lightning-output-field>
-                    <lightning-output-field
-                        field-name={chargerField}
-                    ></lightning-output-field>
-                    <lightning-output-field
-                        field-name={motorField}
-                    ></lightning-output-field>
-                    <section>Frame</section>
-                    <lightning-output-field
-                        field-name={materialField}
-                    ></lightning-output-field>
-                    <lightning-output-field
-                        field-name={forkField}
-                    ></lightning-output-field>
+                            <section>Electric Components</section>
+                            <lightning-output-field field-name={batteryField}></lightning-output-field>
+                            <lightning-output-field field-name={chargerField}></lightning-output-field>
+                            <lightning-output-field field-name={motorField}></lightning-output-field>
+                            <section>Frame</section>
+                            <lightning-output-field field-name={materialField}></lightning-output-field>
+                            <lightning-output-field field-name={forkField}></lightning-output-field>
 
-                    <section>Brakes</section>
-                    <div class="slds-form-element slds-form-element_horizontal">
-                        <span class="slds-form-element__label">Front</span>
-                        <div class="slds-form-element__control">
-                            <lightning-output-field
-                                field-name={frontBrakesField}
-                                variant="label-hidden"
-                                aria-labelledby="Front"
-                            ></lightning-output-field>
-                        </div>
+                            <section>Brakes</section>
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <span class="slds-form-element__label">Front</span>
+                                <div class="slds-form-element__control">
+                                    <lightning-output-field field-name={frontBrakesField} variant="label-hidden"
+                                        aria-labelledby="Front"></lightning-output-field>
+                                </div>
+                            </div>
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <span class="slds-form-element__label">Rear</span>
+                                <div class="slds-form-element__control">
+                                    <lightning-output-field field-name={rearBrakesField} variant="label-hidden"
+                                        aria-labelledby="Rear"></lightning-output-field>
+                                </div>
+                            </div>
+                        </lightning-record-view-form>
+
+
+
                     </div>
-                    <div class="slds-form-element slds-form-element_horizontal">
-                        <span class="slds-form-element__label">Rear</span>
-                        <div class="slds-form-element__control">
-                            <lightning-output-field
-                                field-name={rearBrakesField}
-                                variant="label-hidden"
-                                aria-labelledby="Rear"
-                            ></lightning-output-field>
-                        </div>
-                    </div>
-                </lightning-record-view-form>
-            </div>
+                </lightning-tab>
+            </lightning-tabset>
+
         </template>
 
         <template if:false={recordId}>
-            <c-placeholder
-                message="Select a product to see details"
-            ></c-placeholder>
+            <c-placeholder message="Select a product to see details"></c-placeholder>
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item>
+                    <lightning-formatted-rich-text class="slds-line-clamp" value={richtext}></lightning-formatted-rich-text>
+                    <lightning-icon icon-name="standard:slack" alternative-text="Approved" title="Approved">
+                    </lightning-icon>
+                    <lightning-icon icon-name="standard:account" alternative-text="Account" title="Account">
+                    </lightning-icon>
+                    <lightning-combobox name="progress" label="In Lightning Layout" value={value}
+                        placeholder="Select Progress" options={options} onchange={handleChange}>
+                    </lightning-combobox>
+                    <div>
+                        <lightning-radio-group name="radioGroup"
+                          label="Radio Group"
+                          options={options}
+                          value={value}
+                          type="button"></lightning-radio-group>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <div class="slds-form-element"><label class="slds-form-element__label"
+                            for="combobox-unique-id-17">Old Blueprint In Layout</label>
+                        <div class="slds-form-element__control">
+                            <div class="slds-combobox_container">
+                                <div
+                                    class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click -slds-is-open">
+                                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right"
+                                        role="none"><input
+                                            class="slds-input slds-combobox__input slds-combobox__input-value"
+                                            id="combobox-unique-id-17" autocomplete="off" role="combobox"
+                                            aria-expanded="false" aria-haspopup="listbox" type="text"
+                                            placeholder="Select an Option…" readonly="" value="Option A"><span
+                                            class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right"
+                                            title="Description of icon when needed"><svg
+                                                class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default"
+                                                aria-hidden="true" viewBox="0 0 52 52">
+                                                <path
+                                                    d="M8.3 14h35.4c1 0 1.7 1.3.9 2.2L27.3 37.4c-.6.8-1.9.8-2.5 0L7.3 16.2c-.7-.9-.1-2.2 1-2.2z">
+                                                </path>
+                                            </svg><span class="slds-assistive-text">Description of icon when
+                                                needed</span></span></div>
+                                    <div id="listbox-unique-id-1" role="listbox"
+                                        class="slds-dropdown slds-dropdown_fluid">
+                                        <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                            <li role="presentation" class="slds-listbox__item">
+                                                <div id="listbox-option-unique-id-04"
+                                                    class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small slds-media_center slds-is-selected"
+                                                    role="option"><span class="slds-media__figure"><svg
+                                                            class="slds-icon slds-icon_x-small slds-listbox__icon-selected"
+                                                            aria-hidden="true" viewBox="0 0 52 52">
+                                                            <path
+                                                                d="M19.1 42.5L2.6 25.9c-.6-.6-.6-1.6 0-2.2l2.2-2.2c.6-.6 1.6-.6 2.2 0L19.4 34c.4.4 1.1.4 1.5 0L45.2 9.5c.6-.6 1.6-.6 2.2 0l2.2 2.2c.6.6.6 1.6 0 2.2L21.3 42.5c-.6.7-1.6.7-2.2 0z">
+                                                            </path>
+                                                        </svg></span><span class="slds-media__body"><span
+                                                            class="slds-truncate" title="Option A"><span
+                                                                class="slds-assistive-text">Current
+                                                                Selection:</span> Option A</span></span></div>
+                                            </li>
+                                            <li role="presentation" class="slds-listbox__item">
+                                                <div id="listbox-option-unique-id-05"
+                                                    class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small slds-media_center"
+                                                    role="option"><span class="slds-media__figure"><svg
+                                                            class="slds-icon slds-icon_x-small slds-listbox__icon-selected"
+                                                            aria-hidden="true" viewBox="0 0 52 52">
+                                                            <path
+                                                                d="M19.1 42.5L2.6 25.9c-.6-.6-.6-1.6 0-2.2l2.2-2.2c.6-.6 1.6-.6 2.2 0L19.4 34c.4.4 1.1.4 1.5 0L45.2 9.5c.6-.6 1.6-.6 2.2 0l2.2 2.2c.6.6.6 1.6 0 2.2L21.3 42.5c-.6.7-1.6.7-2.2 0z">
+                                                            </path>
+                                                        </svg></span><span class="slds-media__body"><span
+                                                            class="slds-truncate" title="Option B"> Option
+                                                            B</span></span></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-combobox name="progress" label="NOT In Lightning Layout" value={value}
+                placeholder="Select Progress" options={options} onchange={handleChange}></lightning-combobox>
+            <div class="slds-form-element"><label class="slds-form-element__label" for="combobox-unique-id-18">old
+                    Blueprint NOT In Layout</label>
+                <div class="slds-form-element__control">
+                    <div class="slds-combobox_container">
+                        <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click -slds-is-open">
+                            <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right"
+                                role="none"><input class="slds-input slds-combobox__input slds-combobox__input-value"
+                                    id="combobox-unique-id-18" autocomplete="off" role="combobox" aria-expanded="false"
+                                    aria-haspopup="listbox" type="text" placeholder="Select an Option…" readonly=""
+                                    value="Option A"><span
+                                    class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right"
+                                    title="Description of icon when needed"><svg
+                                        class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default"
+                                        aria-hidden="true" viewBox="0 0 52 52">
+                                        <path
+                                            d="M8.3 14h35.4c1 0 1.7 1.3.9 2.2L27.3 37.4c-.6.8-1.9.8-2.5 0L7.3 16.2c-.7-.9-.1-2.2 1-2.2z">
+                                        </path>
+                                    </svg><span class="slds-assistive-text">Description of icon when
+                                        needed</span></span></div>
+                            <div id="listbox-unique-id" role="listbox" class="slds-dropdown slds-dropdown_fluid">
+                                <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                    <li role="presentation" class="slds-listbox__item">
+                                        <div id="listbox-option-unique-id-01"
+                                            class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small slds-media_center slds-is-selected"
+                                            role="option"><span class="slds-media__figure"><svg
+                                                    class="slds-icon slds-icon_x-small slds-listbox__icon-selected"
+                                                    aria-hidden="true" viewBox="0 0 52 52">
+                                                    <path
+                                                        d="M19.1 42.5L2.6 25.9c-.6-.6-.6-1.6 0-2.2l2.2-2.2c.6-.6 1.6-.6 2.2 0L19.4 34c.4.4 1.1.4 1.5 0L45.2 9.5c.6-.6 1.6-.6 2.2 0l2.2 2.2c.6.6.6 1.6 0 2.2L21.3 42.5c-.6.7-1.6.7-2.2 0z">
+                                                    </path>
+                                                </svg></span><span class="slds-media__body"><span class="slds-truncate"
+                                                    title="Option A"><span class="slds-assistive-text">Current
+                                                        Selection:</span> Option
+                                                    A</span></span></div>
+                                    </li>
+                                    <li role="presentation" class="slds-listbox__item">
+                                        <div id="listbox-option-unique-id-02"
+                                            class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small slds-media_center"
+                                            role="option"><span class="slds-media__figure"><svg
+                                                    class="slds-icon slds-icon_x-small slds-listbox__icon-selected"
+                                                    aria-hidden="true" viewBox="0 0 52 52">
+                                                    <path
+                                                        d="M19.1 42.5L2.6 25.9c-.6-.6-.6-1.6 0-2.2l2.2-2.2c.6-.6 1.6-.6 2.2 0L19.4 34c.4.4 1.1.4 1.5 0L45.2 9.5c.6-.6 1.6-.6 2.2 0l2.2 2.2c.6.6.6 1.6 0 2.2L21.3 42.5c-.6.7-1.6.7-2.2 0z">
+                                                    </path>
+                                                </svg></span><span class="slds-media__body"><span class="slds-truncate"
+                                                    title="Option B"> Option B</span></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="slds-grid">
+                <lightning-combobox name="progress" label="In Flexbox" value={value} placeholder="Select Progress"
+                    options={options} onchange={handleChange}></lightning-combobox>
+                <div class="slds-form-element"><label class="slds-form-element__label" for="combobox-unique-id-19">Old
+                        Blueprint In Flexbox</label>
+                    <div class="slds-form-element__control">
+                        <div class="slds-combobox_container">
+                            <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click -slds-is-open">
+                                <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right"
+                                    role="none"><input
+                                        class="slds-input slds-combobox__input slds-combobox__input-value"
+                                        id="combobox-unique-id-19" autocomplete="off" role="combobox"
+                                        aria-expanded="false" aria-haspopup="listbox" type="text"
+                                        placeholder="Select an Option…" readonly="" value="Option A"><span
+                                        class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right"
+                                        title="Description of icon when needed"><svg
+                                            class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default"
+                                            aria-hidden="true" viewBox="0 0 52 52">
+                                            <path
+                                                d="M8.3 14h35.4c1 0 1.7 1.3.9 2.2L27.3 37.4c-.6.8-1.9.8-2.5 0L7.3 16.2c-.7-.9-.1-2.2 1-2.2z">
+                                            </path>
+                                        </svg><span class="slds-assistive-text">Description of icon when
+                                            needed</span></span></div>
+                                <div id="listbox-unique-id-2" role="listbox" class="slds-dropdown slds-dropdown_fluid">
+                                    <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                        <li role="presentation" class="slds-listbox__item">
+                                            <div id="listbox-option-unique-id-06"
+                                                class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small slds-media_center slds-is-selected"
+                                                role="option"><span class="slds-media__figure"><svg
+                                                        class="slds-icon slds-icon_x-small slds-listbox__icon-selected"
+                                                        aria-hidden="true" viewBox="0 0 52 52">
+                                                        <path
+                                                            d="M19.1 42.5L2.6 25.9c-.6-.6-.6-1.6 0-2.2l2.2-2.2c.6-.6 1.6-.6 2.2 0L19.4 34c.4.4 1.1.4 1.5 0L45.2 9.5c.6-.6 1.6-.6 2.2 0l2.2 2.2c.6.6.6 1.6 0 2.2L21.3 42.5c-.6.7-1.6.7-2.2 0z">
+                                                        </path>
+                                                    </svg></span><span class="slds-media__body"><span
+                                                        class="slds-truncate" title="Option A"><span
+                                                            class="slds-assistive-text">Current Selection:</span> Option
+                                                        A</span></span></div>
+                                        </li>
+                                        <li role="presentation" class="slds-listbox__item">
+                                            <div id="listbox-option-unique-id-07"
+                                                class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small slds-media_center"
+                                                role="option"><span class="slds-media__figure"><svg
+                                                        class="slds-icon slds-icon_x-small slds-listbox__icon-selected"
+                                                        aria-hidden="true" viewBox="0 0 52 52">
+                                                        <path
+                                                            d="M19.1 42.5L2.6 25.9c-.6-.6-.6-1.6 0-2.2l2.2-2.2c.6-.6 1.6-.6 2.2 0L19.4 34c.4.4 1.1.4 1.5 0L45.2 9.5c.6-.6 1.6-.6 2.2 0l2.2 2.2c.6.6.6 1.6 0 2.2L21.3 42.5c-.6.7-1.6.7-2.2 0z">
+                                                        </path>
+                                                    </svg></span><span class="slds-media__body"><span
+                                                        class="slds-truncate" title="Option B"> Option B</span></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </template>
     </lightning-card>
 </template>

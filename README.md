@@ -63,6 +63,7 @@ E-Bikes is a sample application that demonstrates how to build applications with
     ```
     sfdx force:source:push
     ```
+    Note: you can use  `sfdx force:source:pull` to pull remote changes to your local environment. Useful for seeing where declarative definitions show up in code.
 
 1. Assign the **ebikes** permission set to the default user:
 
@@ -98,6 +99,11 @@ E-Bikes is a sample application that demonstrates how to build applications with
 
     ```
     sfdx force:org:open
+    ```
+
+    local dev server (doesn't work for a lot of things...)
+    ```
+    sfdx force:lightning:lwc:start
     ```
 
 1. In **Setup**, under **Themes and Branding**, activate the **Lightning Lite** theme.
